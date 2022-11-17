@@ -22,17 +22,17 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
-import launch_ros.actions import Node
+import launch_ros.actions
 
 def generate_launch_description():
 
-    pkg_depthai_viz=get_package_share_directory(depthai_viz)
+    pkg_depthai_viz=get_package_share_directory('depthai_viz')
 
     rviz2_config=PathJoinSubstitution(
         [pkg_depthai_viz,'rviz','stereoInertialDepthAlignROS2.rviz']
     )
     
-    rviz2_node=Node(
+    rviz2_node=launch_ros.actions.Node(
             package='rviz2',
             executable='rviz2',
             name='rviz2_node',
