@@ -29,7 +29,7 @@ def generate_launch_description():
     pkg_depthai_viz=get_package_share_directory('depthai_viz')
 
     rviz2_config=PathJoinSubstitution(
-        [pkg_depthai_viz,'rviz','pointcloud.rviz']
+        [pkg_depthai_viz,'rviz','pointCloud.rviz']
     )
     
     rviz2_node=launch_ros.actions.Node(

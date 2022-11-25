@@ -13,7 +13,7 @@ ___
 | # | Launch .py file                | .rviz file used                   | Executable Name      |
 | - | -------------------------------| --------------------------------- | -------------------- |
 | 1 | mobile_publisher.launch.py     | pointCloud.rviz                   | mobilenet_node       |
-| 2 | rgb_publisher.launch.py        | default.rviz                      | rgb_stereo_node      |
+| 2 | rgb_publisher.launch.py        | pointCloud.rviz                   | rgb_stereo_node      |
 | 3 | stereo_inertial_node.launch.py | stereoInertialDepthAlignROS2.rviz | stereo_inertial_node |
 | 4 | stereo.launch.py               | stereoPointCloud.rviz             | stereo_node          |
 
