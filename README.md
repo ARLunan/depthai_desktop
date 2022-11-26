@@ -8,14 +8,16 @@ Checkout the code and Camera connection: Run a launch command on the Ubuntu 22.0
 
 The command _~/ros2 launch depthai_examples stereo_inertial_node camera_model:=OAK-D-LITE enableRviz:=True_ (default) displays Camera data on the SBC Controller Desktop GUI with **rviz** configured with _stereoIntertialDepthAlignROS2.rviz file_  
 
-The depthai-ros packge has 4 launch files that can be run on the SBC Robot Controller with their default configuration to launch **rviz** to display the Camera Data locally.  
+The depthai-ros packge has 4 launch files that can be run on the SBC Robot Controller with their default configuration to **ros2 run rqt_image_view rqt_image_view"** or launch **rviz** to display the Camera Data locally.  
 ___  
 | # | Launch .py file                | .rviz file used                   | Executable Name      |
 | - | -------------------------------| --------------------------------- | -------------------- |
-| 1 | mobile_publisher.launch.py     | pointCloud.rviz                   | mobilenet_node       |
-| 2 | rgb_publisher.launch.py        | pointCloud.rviz                   | rgb_stereo_node      |
+| 1 | mobile_publisher.launch.py     | rqt_image_view                    | mobilenet_node       |
+| 2 | rgb_publisher.launch.py        | rqt_image_view or pointCloud.rviz | rgb_stereo_node      |
 | 3 | stereo_inertial_node.launch.py | stereoInertialDepthAlignROS2.rviz | stereo_inertial_node |
 | 4 | stereo.launch.py               | stereoPointCloud.rviz             | stereo_node          |
+
+Note on #4 .rviz file, Correct the PointCloud2 Channel Name = Intensity
 
 Step 2: On a Linux Development Desktop, Ubuntu 22.04 ROS2 Humble -desktop (or -full) (_~:sudo apt install ros-humble-desktop_) Published Camera Image data msgs can be displayed by Node Subscribed msgs in a network connected Desktop RVIZ by running, for example: _~: ros2 run rviz2 rviz2 -d /home/ubuntu/depthai/rviz/stereoInertialDepthAlignROS2.rviz_ . Copy the **rviz** file to this location from the /opt/ros/humble/share/depth_examples/launch/rviz/" folder. Or simply run _~: ros2 run rqt_image_view rqt_imageview_
 
