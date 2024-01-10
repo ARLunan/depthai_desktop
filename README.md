@@ -6,11 +6,11 @@ Step 1: Visit the Luxonis Depthai Github to install the dependancies:. <u>https:
 
 Checkout the code and Camera connection: Run a launch command on the Ubuntu 22.04/ROS2 Humble SBC Robot Controller with a connected Luxonis OAK-D-Lite to Publish Camera Data, for example:  
 
-The command _~/ros2 launch depthai_examples stereo_inertial_node camera_model:=OAK-D-LITE enableRviz:=True_ (default) displays Camera data on the SBC Controller Desktop GUI with **rviz** configured with _stereoIntertialDepthAlignROS2.rviz file_  
+The command " ~/ros2 launch depthai_examples stereo_inertial_node.launch.py" camera_model:=OAK-D-LITE enableRviz:=True" (default) displays Camera data on the SBC Controller Desktop GUI with **rviz** configured with _stereoIntertialDepthAlignROS2.rviz file. Use "enabbleRviz:=False" option to NOT display Rviz on the SBC.  
 
-The depthai-ros packge has 4 launch files that can be run on the SBC Robot Controller with their default configuration to **ros2 run rqt_image_view rqt_image_view"** or launch **rviz** to display the Camera Data locally.  
+The depthai-ros packge has 5 launch files that can be run on the SBC Robot Controller with their default configuration to **ros2 run rqt_image_view rqt_image_view"** or launch **rviz** to display the Camera Data locally.  
 ___  
-| # | Launch .py file                | .rviz file used                   | Executable Name      |
+| # | SBC Launch .py file            | .rviz file used                   | Executable Name      |
 | - | -------------------------------| --------------------------------- | -------------------- |
 | 1 | mobile_publisher.launch.py     | rqt_image_view                    | mobilenet_node       |
 | 2 | rgb_publisher.launch.py        | rqt_image_view or pointCloud.rviz | rgb_stereo_node      |
@@ -23,7 +23,7 @@ Step 2: On a Linux Development Desktop, Ubuntu 22.04 ROS2 Humble -desktop (or -f
 
 Step 3: The Launch Files in this **depthai_desktop** repository installed and compiled in a workspace (e.g. depthai_ws/src) that includes a **depthai_viz** package are equivalent to running the above **rviz** launch commands embedded in each, for each of the above 4 commands that are **run** on the SBC Robot controller, respectively.
 
-Step 4: Run one of the above SBC Controller and corresponding Developement Desktop launch files:  (Use for example, the Step 1 launch example with enableRviz:=False .
+Step 4: Run one of the above **SBC Controller** and corresponding **Development Desktop** launch files:  (Use for example, the Step 1 launch example with enableRviz:=False or :=True .
 
 \#1. ~: ros2 launch depthai_viz view_mobilePublisher.launch.py 
 
